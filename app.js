@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(morgan('common')); // let's see what 'common' format looks like
+app.use(morgan('dev')); 
 
 const books = require('./books-data.js');
 
@@ -38,6 +38,4 @@ app.get('/books', (req, res) => {
   res.json(results);
 });
 
-app.listen(8000, () => {
-  console.log('Server started on PORT 8000');
-});
+module.exports = app;
